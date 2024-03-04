@@ -1,0 +1,519 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: "Golos Text", sans-serif;
+    overflow-x:hidden ;
+}
+
+:root {
+    --blue_main-color: #4348BD;
+    --adv_bg-color: rgba(71, 108, 94, 0.05);
+    --footer_bg_color: #1E2623;
+    --rest_p_color: #7E7E7E;
+    --border_color: #D0CFD7;
+}
+
+span {
+    color: var(--blue_main-color)
+}
+
+svg path {
+    transition: all 0.5s linear;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 46px;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 0;
+}
+
+/*Фон*/
+.bg_page {
+    position: absolute;
+    bottom: 0;
+    object-fit: cover;
+    width: 100vw;
+    z-index: -1;
+    left: 0;
+}
+
+/*Начальный контейнер для большинство разделов*/
+.container {
+    width: 1370px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+/**/
+nav {
+    position: absolute;
+    top: 50px;
+    left: 90%;
+}
+
+nav div {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--blue_main-color);
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s linear;
+    flex-direction: column;
+    gap: 5px;
+}
+
+nav svg rect {
+    transition: all 0.1s linear;
+}
+
+nav div:hover {
+    background: var(--blue_main-color);
+}
+
+nav:hover svg rect {
+    fill: white;
+}
+
+/*Главная*/
+.main {
+    width: 100vw;
+    height: 754px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 103px;
+    font-weight: 700;
+    line-height: 124px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin: 0;
+    padding-top: 34px;
+}
+
+h1 span {
+    font-weight: 800;
+    color: var(--blue_main-color);
+}
+
+.main h2 {
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: 0.15em;
+    padding-top: 12px;
+}
+
+.main_background {
+    position: absolute;
+    z-index: -1;
+    height: 754px;
+    object-fit: cover;
+}
+
+.main_logo {
+    padding-top: 79px;
+    height: 101px;
+    object-fit: cover;
+}
+
+.search {
+    height: 120px;
+    width: 906px;
+    margin-top: 114px;
+    border-radius: 15px;
+    background: white;
+}
+
+.search_container {
+    padding: 35px;
+    display: flex;
+    gap: 20px;
+}
+
+.search_filter {
+    display: flex;
+    justify-content: space-between;
+    width: 323px;
+    height: 50px;
+    align-items: center;
+    border: 1px var(--border_color) solid;
+    border-radius: 6px;
+    padding-inline: 25px;
+    transition: border 0.1s linear;
+}
+
+.search_filter:active {
+    border-color: var(--blue_main-color);
+}
+
+.search_filter span {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0;
+    text-align: left;
+    color: black;
+
+}
+
+.search_button {
+    width: 150px;
+    background: rgba(67, 72, 189, 1);
+    outline: 0;
+    border-radius: 6px;
+    border: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 0 30px;
+    transition: all .1s linear;
+}
+
+.search_button span {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+    text-align: left;
+    transition: color 0.1s linear;
+}
+
+.search_button svg path {
+    transition: fill 0.1s linear;
+}
+
+.search_button:hover {
+    background: rgba(67, 72, 189, 0.7);
+}
+
+.search_button:active span, .search_button:active svg path {
+    color: #ffa550;
+    fill: #ffa550;
+}
+
+/*Раздел про гиды - gids*/
+.gids {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    padding-top: 50px;
+}
+
+.gid {
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gid img {
+    width: 156px;
+    height: 156px;
+    border-radius: 50%;
+}
+
+.gid h3 {
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    margin-block: 0;
+    transition: all 0.1s step-end;
+}
+
+.gid h3:hover {
+    color: var(--blue_main-color);
+}
+
+.gid p {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    margin-block: 0;
+    color: var(--rest_p_color);
+}
+
+/*Раздел про отдых - rests*/
+.rests {
+    padding-top: 50px;
+    display: flex;
+    gap: 32px;
+}
+
+.rest {
+    width: 321px;
+    height: 433px;
+    text-align: center;
+}
+
+.rest img {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+}
+
+.rest h3 {
+    height: 52px;
+    margin-block: 0;
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    transition: all 0.1s step-end;
+}
+
+.rest h3:hover {
+    color: var(--blue_main-color);
+}
+
+.rest p {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    margin-block: 0;
+    color: var(--rest_p_color);
+}
+
+.rest div {
+    padding-top: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.rest div p {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    color: black;
+}
+
+/*Раздел Почему мы? - advantages */
+.main_adv {
+    position: relative;
+    padding-block: 100px;
+}
+
+.advantages {
+    margin: 0 auto;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    padding-top: 80px;
+
+}
+
+.advantage {
+    height: 221px;
+    width: 438px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background: var(--adv_bg-color);
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.advantage:hover path {
+    fill: #ffa550;
+}
+
+.advantage:hover .icons {
+    top: -36px
+}
+
+.icons {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 92px;
+    height: 92px;
+    top: -30px;
+    background: var(--blue_main-color);
+    transition: top 0.2s linear;
+}
+
+.adv_text {
+    width: 100%;
+    padding-top: 40px;
+    padding-inline: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0;
+
+
+}
+
+/*footer*/
+
+footer {
+    width: 100vw;
+    height: 302px;
+    background: var(--footer_bg_color);
+
+}
+footer span {
+    color: white;
+}
+.footer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 169px;
+}
+.footer_title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.footer_link {
+    display: flex;
+    flex-direction:column ;
+    padding-top: 20px;
+    gap: 10px;
+}
+.footer_link a {
+    text-decoration: none;
+    color:white;
+    transition: color 0.1s linear;
+}
+.footer_link a:hover {
+    color: #ffa550;
+}
+.footer_link p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+     color: rgba(126, 126, 126, 1);
+);
+
+}
+.footer_contact {
+    display: flex;
+    gap: 66px;
+}
+.link svg:hover {
+    transition: all 0.2s linear;
+}
+.instagram:hover {
+    fill: #e4405f; /* Цвет при наведении для Instagram */
+}
+
+.facebook:hover {
+    fill: #1877f2; /* Цвет при наведении для Facebook */
+}
+
+.whats_up:hover {
+    fill: #25d366; /* Цвет при наведении для WhatsApp */
+}
+
+@media (max-width: 1440px) {
+    .footer {
+        gap: 100px;
+    }
+}
+@media (max-width: 1024px) {
+    .container {
+        max-width:1024px ;
+    }
+    .gids {
+        flex-wrap: wrap;
+        gap: 60px;
+        justify-content: center;
+    }
+    .rests {
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+    }
+    .advantages {
+        flex-wrap: wrap;
+    }
+    .footer {
+        gap:30px;
+    }
+
+}
+@media (max-width: 768px) {
+    .container {
+        width: auto;
+    }
+    h1 {
+        font-size: 6rem;
+        font-weight: 700;
+        line-height: 7rem;
+        letter-spacing: 0.03em;
+        text-align: center;
+        margin: 0;
+    }
+
+    .main h2 {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        letter-spacing: 0.15em;
+    }
+    .search {
+        height: auto;
+        margin-top: 50px;
+        width: 450px;
+    }
+    .search_container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .search_button {
+        width: 100%;
+        padding: 16px;
+        justify-content: center;
+    }
+    footer {
+        height: auto;
+    }
+    .footer {
+        flex-direction: column;
+        padding-block: 60px ;
+        height: auto;
+        gap: 40px;
+    }
+    .footer_title {
+        justify-content: center;
+    }
+}
+@media (max-width: 500px) {
+    .gids {
+        gap: 80px
+    }
+}
